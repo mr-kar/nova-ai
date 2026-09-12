@@ -1,28 +1,31 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import ProductShowcase from "@/components/ProductShowcase";
+import TrustedStats from "@/components/TrustedStats";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#060816] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#060816] text-white">
       <Navbar />
 
       <Hero />
 
-      {/* Temporary section marker.
-          Akan kita replace di BATCH 2. */}
-      <section
-        id="features"
-        className="relative min-h-75 border-t border-white/4 bg-[#060816]"
-      >
-        <div className="mx-auto max-w-7xl px-6 py-20 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-gray-700">
-            More coming next
-          </p>
-        </div>
-      </section>
+      <Features />
 
-      <section id="pricing" className="hidden" />
-      <section id="reviews" className="hidden" />
+      <ProductShowcase />
+
+      <TrustedStats />
+
+      {/* Temporary section */}
+      <section
+        id="pricing"
+        className="flex min-h-[220px] items-center justify-center border-t border-white/[0.04]"
+      >
+        <p className="text-xs uppercase tracking-[0.3em] text-gray-700">
+          Pricing coming in Batch 3
+        </p>
+      </section>
     </main>
   );
 }
