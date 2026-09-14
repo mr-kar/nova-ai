@@ -3,6 +3,11 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import ProductShowcase from "@/components/ProductShowcase";
 import TrustedStats from "@/components/TrustedStats";
+import Pricing from "@/components/Pricing";
+import Resources from "@/components/Resources";
+import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,15 +22,15 @@ export default function Home() {
 
       <TrustedStats />
 
-      {/* Temporary section */}
-      <section
-        id="pricing"
-        className="flex min-h-[220px] items-center justify-center border-t border-white/[0.04]"
-      >
-        <p className="text-xs uppercase tracking-[0.3em] text-gray-700">
-          Pricing coming in Batch 3
-        </p>
-      </section>
+      <Pricing />
+
+      <Resources />
+
+      <FAQ />
+
+      <CTA />
+
+      <Footer />
     </main>
   );
 }

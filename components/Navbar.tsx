@@ -3,10 +3,10 @@
 import { useState } from "react";
 
 const navItems = [
-  { label: "Features", href: "#features" },
-  { label: "Dashboard", href: "#dashboard" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Features", href: "/features" },
+  { label: "Dashboard", href: "/dashboard" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Resources", href: "/resources" },
 ];
 
 export default function Navbar() {
@@ -14,71 +14,71 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="absolute inset-0 bg-[#060816]/70 backdrop-blur-xl border-b border-white/6" />
+      <div className="absolute inset-0 border-b border-white/[0.06] bg-[#060816]/75 backdrop-blur-xl" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="h-20 flex items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <a
             href="/"
-            className="flex items-center gap-3 group"
+            className="group flex items-center gap-3"
             onClick={() => setMenuOpen(false)}
           >
-            <div className="w-9 h-9 rounded-xl bg-white text-black flex items-center justify-center font-black text-sm transition-transform duration-300 group-hover:rotate-6">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-sm font-black text-black transition-transform duration-300 group-hover:rotate-6">
               N
             </div>
 
-            <span className="font-bold tracking-[0.18em] text-sm">
+            <span className="text-sm font-bold tracking-[0.18em]">
               NOVA AI
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-sm text-gray-400 transition-colors duration-200 hover:text-white"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* CTA */}
           <div className="hidden md:block">
             <a
-              href="#pricing"
+              href="/pricing"
               className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
             >
               Start Free
             </a>
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile menu */}
           <button
             type="button"
             aria-label="Toggle navigation"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden w-10 h-10 rounded-xl border border-white/10 bg-white/4 flex flex-col items-center justify-center gap-1.5"
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] md:hidden"
           >
             <span
-              className={`w-4 h-px bg-white transition-transform ${
-                menuOpen ? "translate-y-0.75 rotate-45" : ""
+              className={`h-px w-4 bg-white transition-transform ${
+                menuOpen ? "translate-y-[3px] rotate-45" : ""
               }`}
             />
 
             <span
-              className={`w-4 h-px bg-white transition-opacity ${
+              className={`h-px w-4 bg-white transition-opacity ${
                 menuOpen ? "opacity-0" : ""
               }`}
             />
 
             <span
-              className={`w-4 h-px bg-white transition-transform ${
-                menuOpen ? "-translate-y-0.75 -rotate-45" : ""
+              className={`h-px w-4 bg-white transition-transform ${
+                menuOpen ? "-translate-y-[3px] -rotate-45" : ""
               }`}
             />
           </button>
@@ -86,24 +86,24 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
+          className={`overflow-hidden transition-all duration-300 md:hidden ${
             menuOpen ? "max-h-96 pb-6" : "max-h-0"
           }`}
         >
-          <nav className="rounded-2xl border border-white/8 bg-[#0b1020]/95 backdrop-blur-xl p-3">
+          <nav className="rounded-2xl border border-white/[0.08] bg-[#0b1020]/95 p-3 backdrop-blur-xl">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-white transition-colors"
+                className="block rounded-xl px-4 py-3 text-sm text-gray-400 transition-colors hover:bg-white/[0.05] hover:text-white"
               >
                 {item.label}
               </a>
             ))}
 
             <a
-              href="#pricing"
+              href="/pricing"
               onClick={() => setMenuOpen(false)}
               className="mt-2 block rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-black"
             >
