@@ -2,6 +2,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { resources } from "@/components/resource-data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Resources",
+  description:
+    "AI workflows, automation strategies, and ideas for building smarter ways of working.",
+};
 
 export default function ResourcesPage() {
   return (

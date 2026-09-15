@@ -1,6 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Features from "@/components/Features";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Features",
+  description:
+    "Explore Nova AI features for automation, analytics, collaboration, and smarter workflows.",
+};
 
 export default function FeaturesPage() {
   return (

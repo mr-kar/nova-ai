@@ -3,6 +3,7 @@
 :root {
   --background: #060816;
   --foreground: #ffffff;
+  --muted: #6b7280;
 }
 
 * {
@@ -11,151 +12,128 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
   margin: 0;
-  background: var(--background);
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(34, 211, 238, 0.055),
+      transparent 30%
+    ),
+    #060816;
   color: var(--foreground);
   overflow-x: hidden;
+  font-family: var(--font-inter), Arial, sans-serif;
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.3);
+  background: rgba(34, 211, 238, 0.2);
   color: white;
 }
 
-/* ================================
-   NOVA BACKGROUND
-================================ */
-
-.nova-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
-.nova-glow {
-  position: absolute;
-  border-radius: 9999px;
-  pointer-events: none;
-  filter: blur(100px);
+button {
+  cursor: pointer;
 }
 
-.nova-glow-cyan {
-  background: rgba(6, 182, 212, 0.12);
+a {
+  text-decoration: none;
 }
 
-.nova-glow-blue {
-  background: rgba(59, 130, 246, 0.1);
+input,
+textarea {
+  font: inherit;
 }
 
-/* ================================
-   ANIMATIONS
-================================ */
-
-@keyframes nova-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
+img {
+  max-width: 100%;
 }
 
-@keyframes nova-pulse {
-  0%,
-  100% {
-    opacity: 0.45;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
 }
 
-@keyframes nova-slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nova-float {
-  animation: nova-float 5s ease-in-out infinite;
-}
-
-.nova-pulse {
-  animation: nova-pulse 4s ease-in-out infinite;
-}
-
-.nova-slide-up {
-  animation: nova-slide-up 0.8s ease-out both;
-}
-
-/* ================================
-   DASHBOARD
-================================ */
-
-.dashboard-glass {
-  background: linear-gradient(
-    145deg,
-    rgba(19, 26, 48, 0.94),
-    rgba(8, 12, 28, 0.92)
-  );
-
-  border: 1px solid rgba(148, 163, 184, 0.12);
-
-  box-shadow:
-    0 30px 100px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-}
-
-.dashboard-grid {
+.grid-bg {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 36px 36px;
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
 }
 
-.chart-line {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: chart-draw 2s ease-out forwards;
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #d1d5db 50%,
+    #6b7280 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-@keyframes chart-draw {
-  to {
-    stroke-dashoffset: 0;
+.glow-cyan {
+  box-shadow:
+    0 0 80px rgba(34, 211, 238, 0.07),
+    inset 0 0 40px rgba(34, 211, 238, 0.015);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
   }
 }
 
-/* ================================
-   SCROLLBAR
-================================ */
-
-::-webkit-scrollbar {
-  width: 8px;
+.animate-float {
+  animation: float 5s ease-in-out infinite;
 }
 
-::-webkit-scrollbar-track {
-  background: #060816;
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.2);
-  border-radius: 999px;
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.35);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
@@ -8,6 +9,12 @@ import Resources from "@/components/Resources";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Work Smarter With AI",
+  description:
+    "Nova AI helps modern teams organize work, automate workflows, and move faster.",
+};
 
 export default function Home() {
   return (

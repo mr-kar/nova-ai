@@ -2,6 +2,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pricing",
+  description:
+    "Explore Nova AI Free, Pro, and Enterprise plans.",
+};
 
 export default function PricingPage() {
   return (

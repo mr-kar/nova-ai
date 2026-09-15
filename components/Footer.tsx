@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 const productLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Dashboard", href: "#dashboard" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Features", href: "/features" },
+  { label: "Dashboard", href: "/dashboard" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Resources", href: "/resources" },
 ];
 
@@ -26,7 +28,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div>
-            <a href="/" className="inline-flex items-center gap-3">
+            <Link href="/" className="inline-flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-sm font-black text-black">
                 N
               </div>
@@ -34,7 +36,7 @@ export default function Footer() {
               <span className="text-sm font-bold tracking-[0.18em]">
                 NOVA AI
               </span>
-            </a>
+            </Link>
 
             <p className="mt-5 max-w-xs text-xs leading-6 text-gray-600">
               AI productivity infrastructure for people and teams who
@@ -50,13 +52,13 @@ export default function Footer() {
 
             <div className="mt-5 space-y-3">
               {productLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="block text-xs text-gray-500 transition hover:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -69,13 +71,13 @@ export default function Footer() {
 
             <div className="mt-5 space-y-3">
               {companyLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="block text-xs text-gray-500 transition hover:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -88,19 +90,18 @@ export default function Footer() {
 
             <div className="mt-5 space-y-3">
               {socialLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="block text-xs text-gray-500 transition hover:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="mt-14 flex flex-col gap-5 border-t border-white/[0.05] pt-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[9px] text-gray-700">
             © 2026 Nova AI. All rights reserved.

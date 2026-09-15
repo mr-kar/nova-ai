@@ -1,6 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductShowcase from "@/components/ProductShowcase";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+  description:
+    "Explore the Nova AI productivity dashboard for tasks, analytics, AI requests, and team activity.",
+};
 
 export default function DashboardPage() {
   return (
