@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
-              href="/pricing"
+              href="/register"
               className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]"
             >
               Start Free
@@ -130,7 +130,7 @@ export default function Navbar() {
             })}
 
             <Link
-              href="/pricing"
+              href="/register"
               onClick={() => setMenuOpen(false)}
               className="mt-2 block rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-black"
             >

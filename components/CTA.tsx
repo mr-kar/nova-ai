@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CTA() {
   return (
     <section
@@ -32,7 +34,7 @@ export default function CTA() {
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
+            <Link
               href="#pricing"
               className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-cyan-300 hover:shadow-[0_0_45px_rgba(34,211,238,0.22)] sm:w-auto"
             >
@@ -41,7 +43,7 @@ export default function CTA() {
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
-            </a>
+            </Link>
 
             <a
               href="/contact"
